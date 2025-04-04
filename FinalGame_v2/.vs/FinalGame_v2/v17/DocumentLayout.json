@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Unity Projects\\FinalGame_v2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BFC0A5CF-4DEE-3964-C886-8C3E099E7C78}|Assembly-CSharp.csproj|C:\\Unity Projects\\FinalGame_v2\\assets\\scripts\\maincard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFC0A5CF-4DEE-3964-C886-8C3E099E7C78}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maincard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFC0A5CF-4DEE-3964-C886-8C3E099E7C78}|Assembly-CSharp.csproj|C:\\Unity Projects\\FinalGame_v2\\assets\\scripts\\scenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFC0A5CF-4DEE-3964-C886-8C3E099E7C78}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFC0A5CF-4DEE-3964-C886-8C3E099E7C78}|Assembly-CSharp.csproj|c:\\unity projects\\finalgame_v2\\assets\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFC0A5CF-4DEE-3964-C886-8C3E099E7C78}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFC0A5CF-4DEE-3964-C886-8C3E099E7C78}|Assembly-CSharp.csproj|C:\\Unity Projects\\FinalGame_v2\\assets\\scripts\\imagedisplaymenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFC0A5CF-4DEE-3964-C886-8C3E099E7C78}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\imagedisplaymenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFC0A5CF-4DEE-3964-C886-8C3E099E7C78}|Assembly-CSharp.csproj|C:\\Unity Projects\\FinalGame_v2\\assets\\scripts\\imagegenerationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFC0A5CF-4DEE-3964-C886-8C3E099E7C78}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\imagegenerationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SceneController.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\FinalGame_v2\\Assets\\Scripts\\SceneController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneController.cs",
+              "ToolTip": "C:\\Unity Projects\\FinalGame_v2\\Assets\\Scripts\\SceneController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneController.cs",
+              "ViewState": "AgIAAGcBAAAAAAAAAAAmwGQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T10:00:22.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainCard.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\FinalGame_v2\\Assets\\Scripts\\MainCard.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MainCard.cs",
+              "ToolTip": "C:\\Unity Projects\\FinalGame_v2\\Assets\\Scripts\\MainCard.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MainCard.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T09:59:10.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ImageDisplayMenu.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\FinalGame_v2\\Assets\\Scripts\\ImageDisplayMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ImageDisplayMenu.cs",
+              "ToolTip": "C:\\Unity Projects\\FinalGame_v2\\Assets\\Scripts\\ImageDisplayMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ImageDisplayMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T20:35:08.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ImageGenerationManager.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\FinalGame_v2\\Assets\\Scripts\\ImageGenerationManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ImageGenerationManager.cs",
+              "ToolTip": "C:\\Unity Projects\\FinalGame_v2\\Assets\\Scripts\\ImageGenerationManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ImageGenerationManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOQAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T20:28:11.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Unity Projects\\FinalGame_v2\\Assets\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMenu.cs",
+              "ToolTip": "C:\\Unity Projects\\FinalGame_v2\\Assets\\MainMenu.cs",
+              "RelativeToolTip": "Assets\\MainMenu.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwC0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T19:38:48.518Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

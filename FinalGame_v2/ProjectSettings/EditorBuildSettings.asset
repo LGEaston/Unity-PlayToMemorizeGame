@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainGameMenu.unity
+    guid: 710121f57ba877b4fa4b7bcc6f96d082
+  - enabled: 1
+    path: Assets/Scenes/QuizGameMenu.unity
+    guid: e381b18c6eca5f644a60f1be36dfd7cf
+  - enabled: 1
+    path: Assets/Scenes/MatchCardGameMenu.unity
+    guid: 38cd6ca989795d242bb62614c4bfc380
+  - enabled: 1
+    path: Assets/Scenes/StartQuizGame.unity
+    guid: cb0cbdddd87c2fb4da0d0ac4d8668bcc
+  - enabled: 1
+    path: Assets/Scenes/AddQuizQuestions.unity
+    guid: 047649537075ac544aab82f5c7c53fba
+  - enabled: 1
+    path: Assets/Scenes/MatchPairImgGame.unity
+    guid: cd85f2a922c48264990fb38c25d08245
+  - enabled: 1
+    path: Assets/Scenes/ImageGeneratorMenu.unity
+    guid: aef7b7ce0f6e4cc44ba1c969b418694a
+  m_configObjects: {}
