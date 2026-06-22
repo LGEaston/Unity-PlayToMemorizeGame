@@ -21,19 +21,6 @@ The content is generated locally instead of being hardcoded.
 
 ---
 
-## 📸 Preview
-
-<div align="center">
-
-<!-- Replace this placeholder after adding a screenshot or GIF to docs/ -->
-<img src="docs/gameplay-preview.png" alt="Gameplay preview" width="800">
-
-<sub>Add a screenshot or GIF at <code>docs/gameplay-preview.png</code>.</sub>
-
-</div>
-
----
-
 ## ✨ What the Project Does
 
 The project contains two independent AI-assisted gameplay loops:
@@ -77,7 +64,7 @@ flowchart LR
 - AI-generated decoy names using a local Ollama model
 - AI-generated card artwork using Stable Diffusion
 - Multiple-choice name recognition gameplay
-- Classic card-matching mechanics
+- Classic flipping card-matching mechanics
 - Fisher-Yates card shuffling
 - Countdown timer
 - Local JSON data storage
