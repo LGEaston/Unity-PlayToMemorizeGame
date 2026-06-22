@@ -1,127 +1,233 @@
 <div align="center">
-🧠 Unity-PlayToMemorizeGame
 
-A card-matching memory game where the content is generated, not hardcoded.
+# 🧠 Unity Play to Memorize
 
-Names come from a local LLM. Images come from a local Stable Diffusion instance.
-Built and run through the Unity Editor.
+### An AI-assisted memory game built with Unity, Ollama, and Stable Diffusion
+
+<p>
+  <img src="https://img.shields.io/badge/Unity-Editor-000000?logo=unity&logoColor=white" alt="Unity">
+  <img src="https://img.shields.io/badge/C%23-Game%20Logic-512BD4?logo=csharp&logoColor=white" alt="C#">
+  <img src="https://img.shields.io/badge/Ollama-Local%20LLM-white?logo=ollama&logoColor=black" alt="Ollama">
+  <img src="https://img.shields.io/badge/Stable%20Diffusion-Image%20Generation-7B61FF" alt="Stable Diffusion">
+  <img src="https://img.shields.io/badge/Status-Portfolio%20Project-success" alt="Status">
+</p>
+
+**Generate names. Create images. Test your memory.**
+
+This project combines a name-recognition quiz with a classic card-matching game.  
+The content is generated locally instead of being hardcoded.
 
 </div>
+
+---
+
+## 📸 Preview
 
 <div align="center">
-  <em>📸 Screenshot / gameplay GIF placeholder — drop one in <code>docs/</code> and link it here.</em>
+
+<!-- Replace this placeholder after adding a screenshot or GIF to docs/ -->
+<img src="docs/gameplay-preview.png" alt="Gameplay preview" width="800">
+
+<sub>Add a screenshot or GIF at <code>docs/gameplay-preview.png</code>.</sub>
+
 </div>
 
-What this is
+---
 
-Two connected, AI-assisted loops live in this project:
+## ✨ What the Project Does
 
-Name QuizCard MatchingInputA name you type + a reference image you importA text prompt you typeAI usedOllama (openchat model)Stable Diffusion (AUTOMATIC1111 WebUI)What the AI produces3 decoy names similar to your inputA generated imageSaved touserData.jsonAssets/imageGenAi/Played asMultiple-choice quiz — pick the real name out of 4 optionsClassic memory-match — flip pairs of cards on a timer
+The project contains two independent AI-assisted gameplay loops:
 
-The two loops are independent: the matching game just reads whatever's sitting in Assets/imageGenAi/, whether those images came from a quiz session or were generated on their own.
+| Mode | Player input | AI service | Generated output | Gameplay |
+|---|---|---|---|---|
+| **Name Quiz** | A name and imported reference image | Ollama using `openchat` | Three similar decoy names | Choose the real name from four options |
+| **Card Matching** | A text image prompt | Stable Diffusion WebUI | A generated image | Match pairs before the timer ends |
+
+The matching game reads images from `Assets/imageGenAi/`, regardless of whether they were produced during a quiz session or generated separately.
+
+---
+
+## 🔄 How It Works
+
+```mermaid
+flowchart LR
+    subgraph Quiz["🧠 Name Quiz"]
+        A[Enter a name and import an image]
+        B[Ollama generates 3 decoy names]
+        C[Save data to userData.json]
+        D[Choose the real name]
+        A --> B --> C --> D
+    end
+
+    subgraph Matching["🃏 Card Matching"]
+        E[Enter an image prompt]
+        F[Stable Diffusion generates an image]
+        G[Save image to Assets/imageGenAi]
+        H[Create a 2 × 4 card grid]
+        I[Fisher-Yates shuffle]
+        J[Match pairs before time runs out]
+        E --> F --> G --> H --> I --> J
+    end
+```
+
+---
+
+## 🎮 Main Features
+
+- AI-generated decoy names using a local Ollama model
+- AI-generated card artwork using Stable Diffusion
+- Multiple-choice name recognition gameplay
+- Classic card-matching mechanics
+- Fisher-Yates card shuffling
+- Countdown timer
+- Local JSON data storage
+- Image importing through the Unity Editor
+- Fully local AI workflow
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **Unity** | Game engine and editor |
+| **C#** | Game logic and API integration |
+| **TextMeshPro** | User-interface text |
+| **Ollama** | Local language-model inference |
+| **Stable Diffusion WebUI** | Local image generation |
+| **Newtonsoft.Json** | JSON serialization |
+| **Mermaid** | README workflow diagram |
+
+---
+
+## ✅ Requirements
+
+The following services must be running locally while the game is open in Unity:
+
+| Dependency | Used by | Default endpoint |
+|---|---|---|
+| [Ollama](https://ollama.com/) with `openchat` | Name Quiz | `http://localhost:11434` |
+| [AUTOMATIC1111 Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui) with `--api` | Card Matching | `http://127.0.0.1:7860` |
+
+> [!IMPORTANT]
+> The game depends on local AI services. Start Ollama and Stable Diffusion before testing the related game mode.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+cd YOUR_REPOSITORY
+```
+
+Replace `YOUR_USERNAME` and `YOUR_REPOSITORY` with your GitHub details.
+
+### 2. Pull the Ollama model
+
+```bash
+ollama pull openchat
+```
+
+### 3. Start Stable Diffusion with API access
+
+**Windows**
+
+```bat
+webui-user.bat --api
+```
+
+**macOS or Linux**
+
+```bash
+./webui.sh --api
+```
+
+### 4. Open the project in Unity
+
+Open the project through Unity Hub using the Unity version recorded in:
+
+```text
+ProjectSettings/ProjectVersion.txt
+```
+
+### 5. Generate game content
+
+Use the Name Quiz or image-generation screen to create local data.
+
+The matching game needs at least **four unique images** inside:
+
+```text
+Assets/imageGenAi/
+```
+
+### 6. Press Play
+
+Start the appropriate scene in the Unity Editor and test the game.
+
+---
+
+## 📁 Project Data
+
+```text
+Unity-PlayToMemorizeGame/
+├── Assets/
+│   └── imageGenAi/          # Generated images used by the matching game
+├── ProjectSettings/
+│   └── ProjectVersion.txt   # Unity editor version
+├── docs/
+│   └── gameplay-preview.png # README screenshot or GIF
+├── userData.json            # Generated quiz data
+└── README.md
+```
+
+---
+
+## ⚠️ Current Limitations
 
 <details>
-<summary><b>🔄 See the full data flow</b></summary>
-#mermaid-r13r-r1 { font-family: "Anthropic Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; fill: rgb(229, 229, 229); }
-#mermaid-r13r-r1 .edge-animation-slow { stroke-dashoffset: 900; animation: 50s linear 0s infinite normal none running dash; stroke-linecap: round; stroke-dasharray: 9, 5 !important; }
-#mermaid-r13r-r1 .edge-animation-fast { stroke-dashoffset: 900; animation: 20s linear 0s infinite normal none running dash; stroke-linecap: round; stroke-dasharray: 9, 5 !important; }
-#mermaid-r13r-r1 .error-icon { fill: rgb(204, 120, 92); }
-#mermaid-r13r-r1 .error-text { fill: rgb(51, 135, 163); stroke: rgb(51, 135, 163); }
-#mermaid-r13r-r1 .edge-thickness-normal { stroke-width: 1px; }
-#mermaid-r13r-r1 .edge-thickness-thick { stroke-width: 3.5px; }
-#mermaid-r13r-r1 .edge-pattern-solid { stroke-dasharray: 0; }
-#mermaid-r13r-r1 .edge-thickness-invisible { stroke-width: 0; fill: none; }
-#mermaid-r13r-r1 .edge-pattern-dashed { stroke-dasharray: 3; }
-#mermaid-r13r-r1 .edge-pattern-dotted { stroke-dasharray: 2; }
-#mermaid-r13r-r1 .marker { fill: rgb(161, 161, 161); stroke: rgb(161, 161, 161); }
-#mermaid-r13r-r1 .marker.cross { stroke: rgb(161, 161, 161); }
-#mermaid-r13r-r1 svg { font-family: "Anthropic Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; }
-#mermaid-r13r-r1 p { margin: 0px; }
-#mermaid-r13r-r1 .label { font-family: "Anthropic Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: rgb(229, 229, 229); }
-#mermaid-r13r-r1 .cluster-label text { fill: rgb(51, 135, 163); }
-#mermaid-r13r-r1 .cluster-label span { color: rgb(51, 135, 163); }
-#mermaid-r13r-r1 .cluster-label span p { background-color: transparent; }
-#mermaid-r13r-r1 .label text, #mermaid-r13r-r1 span { fill: rgb(229, 229, 229); color: rgb(229, 229, 229); }
-#mermaid-r13r-r1 .node rect, #mermaid-r13r-r1 .node circle, #mermaid-r13r-r1 .node ellipse, #mermaid-r13r-r1 .node polygon, #mermaid-r13r-r1 .node path { fill: transparent; stroke: rgb(161, 161, 161); stroke-width: 1px; }
-#mermaid-r13r-r1 .rough-node .label text, #mermaid-r13r-r1 .node .label text, #mermaid-r13r-r1 .image-shape .label, #mermaid-r13r-r1 .icon-shape .label { text-anchor: middle; }
-#mermaid-r13r-r1 .node .katex path { fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0); stroke-width: 1px; }
-#mermaid-r13r-r1 .rough-node .label, #mermaid-r13r-r1 .node .label, #mermaid-r13r-r1 .image-shape .label, #mermaid-r13r-r1 .icon-shape .label { text-align: center; }
-#mermaid-r13r-r1 .node.clickable { cursor: pointer; }
-#mermaid-r13r-r1 .root .anchor path { stroke-width: 0; stroke: rgb(161, 161, 161); fill: rgb(161, 161, 161) !important; }
-#mermaid-r13r-r1 .arrowheadPath { fill: rgb(11, 11, 11); }
-#mermaid-r13r-r1 .edgePath .path { stroke: rgb(161, 161, 161); stroke-width: 1px; }
-#mermaid-r13r-r1 .flowchart-link { stroke: rgb(161, 161, 161); fill: none; }
-#mermaid-r13r-r1 .edgeLabel { background-color: transparent; text-align: center; }
-#mermaid-r13r-r1 .edgeLabel p { background-color: transparent; }
-#mermaid-r13r-r1 .edgeLabel rect { opacity: 0.5; background-color: transparent; fill: transparent; }
-#mermaid-r13r-r1 .labelBkg { background-color: rgba(0, 0, 0, 0.5); }
-#mermaid-r13r-r1 .cluster rect { fill: rgb(204, 120, 92); stroke: rgb(138, 115, 107); stroke-width: 1px; }
-#mermaid-r13r-r1 .cluster text { fill: rgb(51, 135, 163); }
-#mermaid-r13r-r1 .cluster span { color: rgb(51, 135, 163); }
-#mermaid-r13r-r1 div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: "Anthropic Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 12px; background: rgb(204, 120, 92); border: 1px solid rgb(138, 115, 107); border-radius: 2px; pointer-events: none; z-index: 100; }
-#mermaid-r13r-r1 .flowchartTitleText { text-anchor: middle; font-size: 18px; fill: rgb(229, 229, 229); }
-#mermaid-r13r-r1 rect.text { fill: none; stroke-width: 0; }
-#mermaid-r13r-r1 .icon-shape, #mermaid-r13r-r1 .image-shape { background-color: transparent; text-align: center; }
-#mermaid-r13r-r1 .icon-shape p, #mermaid-r13r-r1 .image-shape p { background-color: transparent; padding: 2px; }
-#mermaid-r13r-r1 .icon-shape .label rect, #mermaid-r13r-r1 .image-shape .label rect { opacity: 0.5; background-color: transparent; fill: transparent; }
-#mermaid-r13r-r1 .label-icon { display: inline-block; height: 1em; overflow: visible; vertical-align: -0.125em; }
-#mermaid-r13r-r1 .node .label-icon path { fill: currentcolor; stroke: revert; stroke-width: revert; }
-#mermaid-r13r-r1 .node .neo-node { stroke: rgb(161, 161, 161); }
-#mermaid-r13r-r1 [data-look="neo"].node rect, #mermaid-r13r-r1 [data-look="neo"].cluster rect, #mermaid-r13r-r1 [data-look="neo"].node polygon { stroke: url("#mermaid-r13r-r1-gradient"); filter: drop-shadow(rgb(185, 185, 185) 1px 2px 2px); }
-#mermaid-r13r-r1 [data-look="neo"].node path { stroke: url("#mermaid-r13r-r1-gradient"); stroke-width: 1px; }
-#mermaid-r13r-r1 [data-look="neo"].node .outer-path { filter: drop-shadow(rgb(185, 185, 185) 1px 2px 2px); }
-#mermaid-r13r-r1 [data-look="neo"].node .neo-line path { stroke: rgb(161, 161, 161); filter: none; }
-#mermaid-r13r-r1 [data-look="neo"].node circle { stroke: url("#mermaid-r13r-r1-gradient"); filter: drop-shadow(rgb(185, 185, 185) 1px 2px 2px); }
-#mermaid-r13r-r1 [data-look="neo"].node circle .state-start { fill: rgb(0, 0, 0); }
-#mermaid-r13r-r1 [data-look="neo"].icon-shape .icon { fill: url("#mermaid-r13r-r1-gradient"); filter: drop-shadow(rgb(185, 185, 185) 1px 2px 2px); }
-#mermaid-r13r-r1 [data-look="neo"].icon-shape .icon-neo path { stroke: url("#mermaid-r13r-r1-gradient"); filter: drop-shadow(rgb(185, 185, 185) 1px 2px 2px); }
-#mermaid-r13r-r1 :root { --mermaid-font-family: "Anthropic Sans",system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }Card Matchingshared folderName QuizType a name + importimageOllama: openchat3 decoy names generatedSaved to userData.jsonQuizGame: pick the realnameType an image promptStable Diffusion APIImage saved toAssets/imageGenAi/SceneController: build 2x4gridFisher-Yates shuffleFlip pairs against a 20stimer
+<summary><strong>View known limitations</strong></summary>
+
+- **Editor-only image import:** `UnityEditor.EditorUtility.OpenFilePanel` is an Editor API and may prevent image importing from working in a standalone build.
+- **No bundled sample data:** A fresh clone may not contain `userData.json` or generated images.
+- **Blocking Ollama request:** The current `.Result` call may temporarily freeze the interface while text is being generated.
+- **Default Stable Diffusion settings:** The request currently sends the prompt without exposing sampler, step count, or negative-prompt controls.
+- **Local services required:** The related game mode cannot generate new content when Ollama or Stable Diffusion is unavailable.
+- **Scene navigation may need refinement:** A shared menu connecting both modes should be confirmed or added.
 
 </details>
 
-Requirements
+---
 
-You need both of these running locally alongside the Unity Editor:
+## 🗺️ Possible Improvements
 
-DependencyPowersDefault endpoint🦙 Ollama with openchat pulledName Quizhttp://localhost:11434🎨 AUTOMATIC1111 SD WebUI (--api flag)Card Matchinghttp://127.0.0.1:7860
+- [ ] Add a main menu connecting both game modes
+- [ ] Replace blocking calls with `async` and `await`
+- [ ] Add loading indicators during AI generation
+- [ ] Expose Stable Diffusion settings in the interface
+- [ ] Add input validation and clearer error messages
+- [ ] Include sample images and sample quiz data
+- [ ] Support standalone builds
+- [ ] Add score tracking and difficulty levels
+- [ ] Add automated tests
+- [ ] Record a gameplay GIF for this README
 
+---
 
-If either service isn't running, that half of the project fails quietly (console errors only) rather than crashing — see Known Limitations.
+## 🔐 Privacy
 
+All language-model and image-generation requests are intended to run locally.
 
+No cloud AI service is required by the current setup.
 
+---
 
-Getting Started
+<div align="center">
 
-bash# 1. Pull the model the quiz needs
-ollama pull openchat
+### ⭐ Built as a Unity, C#, and local-AI portfolio project
 
-# 2. Launch SD WebUI with the API enabled
-./webui.sh --api          # webui-user.bat --api on Windows
+Made with Unity, Ollama, and Stable Diffusion.
 
-Then:
-
-
-Open the project in Unity (📌 add your Unity version — check ProjectSettings/ProjectVersion.txt).
-Press Play.
-Generate a few names/images via the Name Quiz and/or image prompt screen — the matching game needs at least 4 unique images in Assets/imageGenAi/ before it's playable.
-
-
-
-⚠️ Known Limitations
-
-<details open>
-<summary>Click to collapse</summary>
-
-Editor-only. OnImportImageButtonClicked calls UnityEditor.EditorUtility.OpenFilePanel, an Editor-only API with no build guard around the call site. This will likely block a standalone build — image import currently only works inside the Unity Editor.
-No bundled sample data. A fresh clone has no userData.json and no images in imageGenAi/. Both AI services need to run at least once to populate either game.
-Ollama call is blocking. OllamaChatClient.Complete waits on .Result, so the UI briefly freezes during generation.
-No exposed SD parameters. ImageGenerationManager sends only the prompt text; sampler, steps, and negative prompt all use API defaults.
-No confirmed shared menu connecting the two modes in the code reviewed so far — flag if there's a unifying scene not covered here.
-
-
-</details>
-
-Tech Stack
-
-Unity · C# · TextMeshPro · Ollama · Stable Diffusion (AUTOMATIC1111) · Newtonsoft.Json
+</div>
